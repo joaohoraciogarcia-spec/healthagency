@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Agency — Marketing Médico com Estratégia e Ética</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a2540;
+  --petrol: #1a4a6b;
+  --mid: #2e6b9e;
+  --teal: #0d9fbb;
+  --ice: #d6eef8;
+  --white: #ffffff;
+  --off: #f4f8fb;
+  --gray: #8a9db5;
+  --light-gray: #e8eff6;
+  --text: #1c2b3a;
+  --muted: #6b7e90;
+  --gold: #c8a96e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* ─── HEADER ─── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 5vw;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10, 37, 64, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s;
+}
+
+.logo-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  color: var(--white);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.logo-mark svg { width: 100%; height: 100%; }
+
+nav { display: flex; align-items: center; gap: 2rem; }
+
+nav a {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: var(--teal); }
+
+.btn-wpp {
+  display: flex; align-items: center; gap: 8px;
+  background: #25D366;
+  color: white !important;
+  padding: 9px 18px;
+  border-radius: 6px;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  transition: background 0.2s, transform 0.2s !important;
+}
+
+.btn-wpp:hover { background: #1ebe5a !important; transform: translateY(-1px); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  width: 22px; height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 5vw 80px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 80% at 75% 50%, rgba(13,159,187,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 20% 80%, rgba(46,107,158,0.15) 0%, transparent 50%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 680px;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 24px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 30px; height: 1px;
+  background: var(--teal);
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--white);
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--teal);
+}
+
+.hero p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.65);
+  max-width: 520px;
+  margin-bottom: 44px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  padding: 14px 32px;
+  background: var(--teal);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-primary:hover {
+  background: #0b8fa9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13,159,187,0.3);
+}
+
+.btn-ghost {
+  padding: 13px 32px;
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-ghost:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.hero-visual {
+  position: absolute;
+  right: 5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 420px;
+  z-index: 2;
+  opacity: 0.9;
+}
+
+.hero-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 28px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-stat {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-stat:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--teal);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+  letter-spacing: 0.06em;
+}
+
+.pulse-line {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  left: 0;
+  height: 60px;
+  opacity: 0.15;
+  overflow: hidden;
+}
+
+.pulse-line svg {
+  animation: pulse-move 4s linear infinite;
+}
+
+@keyframes pulse-move {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ─── SECTIONS COMMON ─── */
+section { padding: 96px 5vw; }
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+
+.section-tag::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--teal);
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+}
+
+h2 em { font-style: italic; color: var(--petrol); }
+
+.section-lead {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 560px;
+  margin-top: 16px;
+}
+
+/* ─── QUEM SOMOS ─── */
+.about {
+  background: var(--off);
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  right: -100px; top: -100px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13,159,187,0.06) 0%, transparent 70%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-left h2 { margin-bottom: 20px; }
+
+.about-pillars {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.pillar {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 3px solid var(--teal);
+}
+
+.pillar-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+}
+
+.pillar-desc {
+  font-size: 0.76rem;
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-stat-card {
+  background: var(--navy);
+  color: white;
+  border-radius: 12px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.about-stat-card .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--teal);
+  white-space: nowrap;
+}
+
+.about-stat-card .desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.7);
+}
+
+/* ─── ATENDEMOS ─── */
+.clients-types {
+  background: white;
+}
+
+.clients-types h2 { margin-bottom: 12px; }
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 52px;
+}
+
+.type-card {
+  background: var(--off);
+  border-radius: 12px;
+  padding: 28px 24px;
+  border: 1px solid var(--light-gray);
+  transition: all 0.3s;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.type-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--teal);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.type-card:hover {
+  border-color: transparent;
+  box-shadow: 0 8px 32px rgba(10,37,64,0.1);
+  transform: translateY(-4px);
+}
+
+.type-card:hover::after { transform: scaleX(1); }
+
+.type-icon {
+  width: 44px; height: 44px;
+  background: var(--ice);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+.type-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.type-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ─── SERVIÇOS ─── */
+.services {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  left: -200px; bottom: -200px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13,159,187,0.08) 0%, transparent 60%);
+}
+
+.services h2 { color: white; }
+.services .section-tag { }
+.services .section-lead { color: rgba(255,255,255,0.5); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 52px;
+}
+
+.service-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 28px 22px;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.service-card:hover {
+  background: rgba(13,159,187,0.1);
+  border-color: rgba(13,159,187,0.3);
+  transform: translateY(-4px);
+}
+
+.service-icon {
+  width: 48px; height: 48px;
+  background: rgba(13,159,187,0.15);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+}
+
+.service-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.service-desc {
+  font-size: 0.77rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+}
+
+/* ─── DIAGNÓSTICO ─── */
+.diagnostic {
+  background: linear-gradient(135deg, var(--petrol) 0%, var(--navy) 60%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.diagnostic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.diagnostic h2 {
+  color: white;
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+
+.diagnostic p {
+  color: rgba(255,255,255,0.65);
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.75;
+}
+
+.diagnostic-form {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.73rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  color: white;
+  font-size: 0.88rem;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input::placeholder { color: rgba(255,255,255,0.3); }
+.form-group select option { background: var(--navy); }
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--teal);
+}
+
+.form-full { grid-column: 1 / -1; }
+
+/* ─── CLIENTES ─── */
+.clients-section {
+  background: var(--off);
+}
+
+.clients-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 52px;
+}
+
+.logos-strip {
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.logos-strip::before,
+.logos-strip::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+}
+
+.logos-strip::before { left: 0; background: linear-gradient(90deg, var(--off), transparent); }
+.logos-strip::after { right: 0; background: linear-gradient(-90deg, var(--off), transparent); }
+
+.logos-track {
+  display: flex;
+  gap: 48px;
+  animation: scroll-logos 20s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes scroll-logos {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 60px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--light-gray);
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray);
+  letter-spacing: 0.08em;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--light-gray);
+  transition: all 0.3s;
+}
+
+.project-card:hover {
+  box-shadow: 0 12px 40px rgba(10,37,64,0.12);
+  transform: translateY(-4px);
+}
+
+.project-thumb {
+  height: 180px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-thumb-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.project-thumb-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  z-index: 1;
+}
+
+.project-body { padding: 20px 22px; }
+
+.project-spec {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+
+.project-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.project-result {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ─── PLANOS ─── */
+.plans {
+  background: white;
+}
+
+.plans h2 { text-align: center; }
+.plans .section-tag { justify-content: center; }
+.plans .section-lead { text-align: center; margin: 16px auto 0; }
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.plan-card {
+  border-radius: 16px;
+  padding: 36px 28px;
+  border: 1px solid var(--light-gray);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-card.featured {
+  background: var(--navy);
+  border-color: transparent;
+  color: white;
+}
+
+.plan-card.featured .plan-price,
+.plan-card.featured .plan-name { color: white; }
+
+.plan-card.featured .plan-feature { color: rgba(255,255,255,0.7); }
+.plan-card.featured .plan-feature::before { background: var(--teal); }
+.plan-card.featured .plan-desc { color: rgba(255,255,255,0.5); }
+
+.plan-badge {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: var(--teal);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.plan-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+.plan-card.featured .plan-name { color: var(--teal); }
+
+.plan-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.plan-card.featured .plan-title { color: white; }
+
+.plan-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.plan-features {
+  list-style: none;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan-feature {
+  font-size: 0.82rem;
+  color: var(--text);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.plan-feature::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 7px;
+  width: 8px; height: 1px;
+  background: var(--petrol);
+}
+
+.btn-plan {
+  width: 100%;
+  padding: 13px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  transition: all 0.25s;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.btn-plan-outline {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--light-gray);
+}
+
+.btn-plan-outline:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.btn-plan-solid {
+  background: var(--teal);
+  color: white;
+  border: none;
+}
+
+.btn-plan-solid:hover {
+  background: #0b8fa9;
+  box-shadow: 0 6px 20px rgba(13,159,187,0.35);
+}
+
+/* ─── CTA FINAL ─── */
+.cta-final {
+  background: var(--navy);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 5vw;
+}
+
+.cta-final::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 100% at 50% 100%, rgba(13,159,187,0.15) 0%, transparent 60%);
+}
+
+.cta-final h2 {
+  color: white;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+.cta-final p {
+  color: rgba(255,255,255,0.55);
+  max-width: 480px;
+  margin: 0 auto 44px;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: #060f1a;
+  color: rgba(255,255,255,0.5);
+  padding: 64px 5vw 36px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 60px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 32px;
+}
+
+.footer-brand {}
+
+.footer-logo {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 14px;
+}
+
+.footer-tagline {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.4);
+  max-width: 240px;
+}
+
+.footer-col h4 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 18px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col a {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover { color: var(--teal); }
+
+.footer-contact p {
+  font-size: 0.8rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-contact strong {
+  color: rgba(255,255,255,0.65);
+  font-weight: 500;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.73rem;
+  color: rgba(255,255,255,0.25);
+}
+
+.footer-bottom a {
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+}
+
+/* ─── SCROLL ANIMATIONS ─── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+
+/* ─── MOBILE NAV ─── */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 72px; left: 0; right: 0;
+  background: rgba(10, 37, 64, 0.98);
+  backdrop-filter: blur(12px);
+  z-index: 99;
+  padding: 24px 5vw 32px;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.mobile-nav.open { display: flex; }
+
+.mobile-nav a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  letter-spacing: 0.06em;
+}
+
+.mobile-nav .btn-wpp {
+  margin-top: 12px;
+  justify-content: center;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1100px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+  .types-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  nav:not(.mobile-nav) { display: none; }
+  .hamburger { display: flex; }
+  .hero-visual { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .types-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .plans-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  section { padding: 72px 5vw; }
+  .types-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .clients-header { flex-direction: column; gap: 24px; align-items: flex-start; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .hero-btns { flex-direction: column; }
+  .about-pillars { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <a href="#" class="logo-text">
+    <div class="logo-mark">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="6" width="2" height="20" rx="1" fill="#0d9fbb"/>
+        <rect x="2" y="6" width="2" height="8" rx="1" fill="rgba(255,255,255,0.3)"/>
+        <text x="7" y="18" font-family="DM Sans,sans-serif" font-size="10" font-weight="700" fill="white" letter-spacing="0.5">H</text>
+        <polyline points="2,26 6,26 9,18 13,30 16,22 19,26 32,26" stroke="#0d9fbb" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    Health Agency
+  </a>
+  <nav>
+    <a href="#about">Quem Somos</a>
+    <a href="#clients-types">Atendimento</a>
+    <a href="#clients-section">Clientes</a>
+    <a href="#diagnostic">Avalie sua Comunicação</a>
+    <a href="#blog" onclick="return false">Blog</a>
+    <a href="#footer">Contato</a>
+    <a href="https://wa.me/5551999999999" class="btn-wpp" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </nav>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMenu()">Quem Somos</a>
+  <a href="#clients-types" onclick="closeMenu()">Atendimento</a>
+  <a href="#clients-section" onclick="closeMenu()">Clientes</a>
+  <a href="#diagnostic" onclick="closeMenu()">Avalie sua Comunicação</a>
+  <a href="#plans" onclick="closeMenu()">Planos</a>
+  <a href="#footer" onclick="closeMenu()">Contato</a>
+  <a href="https://wa.me/5551999999999" class="btn-wpp" target="_blank">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  
+  <div class="hero-content">
+    <div class="hero-eyebrow">Marketing Médico Especializado</div>
+    <h1>Marketing Médico para quem precisa crescer com <em>autoridade, ética</em> e estratégia.</h1>
+    <p>Ajudamos médicos, clínicas e empresas da saúde a construir presença digital, gerar confiança e atrair os pacientes certos.</p>
+    <div class="hero-btns">
+      <a href="#diagnostic" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        Solicitar diagnóstico
+      </a>
+      <a href="https://wa.me/5551999999999" class="btn-ghost" target="_blank">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hero-stat">
+        <div class="stat-num">+10 anos</div>
+        <div class="stat-label">de especialização em saúde</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">+200</div>
+        <div class="stat-label">profissionais e clínicas atendidos</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">3 estados</div>
+        <div class="stat-label">com atendimento presencial · RS e SC</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">focados em marketing médico ético</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM SOMOS -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-left fade-in">
+      <div class="section-tag">Quem Somos</div>
+      <h2>Uma agência pensada para o universo da <em>saúde</em></h2>
+      <p class="section-lead">A Health Agency nasceu para preencher uma lacuna real: o mercado de saúde merece comunicação especializada, ética e estratégica — não soluções genéricas de marketing.</p>
+      <p class="section-lead" style="margin-top:16px">Unimos marketing digital, branding, conteúdo especializado, inteligência de mercado, tráfego pago e gestão de reputação em uma única estrutura dedicada exclusivamente à área da saúde.</p>
+      <div class="about-pillars">
+        <div class="pillar">
+          <div class="pillar-name">Marketing Digital</div>
+          <div class="pillar-desc">Estratégias específicas para o setor saúde</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-name">Branding Médico</div>
+          <div class="pillar-desc">Identidade que transmite autoridade</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-name">Conteúdo Clínico</div>
+          <div class="pillar-desc">Produção especializada e ética</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-name">Tráfego Pago</div>
+          <div class="pillar-desc">Dentro dos limites do CFM e CRMV</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-name">Reputação Online</div>
+          <div class="pillar-desc">Gestão de avaliações e imagem digital</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-name">SEO para Saúde</div>
+          <div class="pillar-desc">Visibilidade orgânica e autoridade</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-right fade-in stagger-2">
+      <div class="about-stat-card">
+        <div class="num">+200</div>
+        <div class="desc">profissionais de saúde atendidos em todo o Brasil com estratégia digital personalizada</div>
+      </div>
+      <div class="about-stat-card" style="background: var(--petrol)">
+        <div class="num">100%</div>
+        <div class="desc">focados no setor saúde — não somos uma agência genérica com um "departamento médico"</div>
+      </div>
+      <div class="about-stat-card" style="background: linear-gradient(135deg,#0d9fbb,#1a4a6b)">
+        <div class="num">3</div>
+        <div class="desc">escritórios: Porto Alegre/RS, Itajaí/SC e Balneário Camboriú/SC — com atendimento remoto nacional</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM ATENDEMOS -->
+<section class="clients-types" id="clients-types">
+  <div style="text-align:center">
+    <div class="section-tag" style="justify-content:center">Atendimento</div>
+    <h2>Para quem <em>trabalhamos</em></h2>
+    <p class="section-lead" style="margin:16px auto 0">Atendemos profissionais e instituições de saúde que buscam crescer com presença digital sólida e comunicação confiável.</p>
+  </div>
+  <div class="types-grid">
+    <div class="type-card fade-in">
+      <div class="type-icon">🩺</div>
+      <div class="type-name">Médicos especialistas</div>
+      <div class="type-desc">Construção de autoridade digital e captação de pacientes qualificados</div>
+    </div>
+    <div class="type-card fade-in stagger-1">
+      <div class="type-icon">🏥</div>
+      <div class="type-name">Clínicas médicas</div>
+      <div class="type-desc">Branding institucional, gestão de múltiplos perfis e tráfego pago</div>
+    </div>
+    <div class="type-card fade-in stagger-2">
+      <div class="type-icon">🏨</div>
+      <div class="type-name">Hospitais</div>
+      <div class="type-desc">Comunicação corporativa, reputação e presença digital institucional</div>
+    </div>
+    <div class="type-card fade-in stagger-3">
+      <div class="type-icon">🦷</div>
+      <div class="type-name">Odontologia</div>
+      <div class="type-desc">Social media, sites e estratégias específicas para o setor odonto</div>
+    </div>
+    <div class="type-card fade-in">
+      <div class="type-icon">🤸</div>
+      <div class="type-name">Fisioterapia</div>
+      <div class="type-desc">Conteúdo educativo e estratégias de captação para clínicas e PF</div>
+    </div>
+    <div class="type-card fade-in stagger-1">
+      <div class="type-icon">✨</div>
+      <div class="type-name">Estética e Dermatologia</div>
+      <div class="type-desc">Marketing visual premium com respeito às normas do CFM</div>
+    </div>
+    <div class="type-card fade-in stagger-2">
+      <div class="type-icon">🔬</div>
+      <div class="type-name">Laboratórios</div>
+      <div class="type-desc">Comunicação B2B e B2C, credibilidade e SEO especializado</div>
+    </div>
+    <div class="type-card fade-in stagger-3">
+      <div class="type-icon">💻</div>
+      <div class="type-name">Healthtechs</div>
+      <div class="type-desc">Posicionamento de marca, conteúdo técnico e estratégia de crescimento</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="services" id="services">
+  <div class="section-tag">Serviços</div>
+  <h2 style="color:white">O que <em style="color:var(--teal)">oferecemos</em></h2>
+  <p class="section-lead">Soluções integradas desenhadas especificamente para as necessidades e regulamentações do marketing em saúde.</p>
+  <div class="services-grid">
+    <div class="service-card fade-in">
+      <div class="service-icon">📱</div>
+      <div class="service-name">Social Media Médico</div>
+      <div class="service-desc">Gestão completa de redes sociais com conteúdo clínico ético e estratégia de engajamento</div>
+    </div>
+    <div class="service-card fade-in stagger-1">
+      <div class="service-icon">🎯</div>
+      <div class="service-name">Gestão de Tráfego Pago</div>
+      <div class="service-desc">Google Ads e Meta Ads dentro das normativas do CFM, CFBM e CRO</div>
+    </div>
+    <div class="service-card fade-in stagger-2">
+      <div class="service-icon">🌐</div>
+      <div class="service-name">Sites Médicos</div>
+      <div class="service-desc">Desenvolvimento de sites institucionais, responsivos e otimizados para conversão</div>
+    </div>
+    <div class="service-card fade-in stagger-3">
+      <div class="service-icon">🔍</div>
+      <div class="service-name">SEO para Saúde</div>
+      <div class="service-desc">Estratégias de posicionamento orgânico para alcançar quem busca especialistas na sua área</div>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">🎨</div>
+      <div class="service-name">Branding Médico</div>
+      <div class="service-desc">Identidade visual e posicionamento de marca para clínicas e profissionais de saúde</div>
+    </div>
+    <div class="service-card fade-in stagger-1">
+      <div class="service-icon">✍️</div>
+      <div class="service-name">Conteúdo para Autoridade</div>
+      <div class="service-desc">Artigos, vídeos e materiais educativos que constroem sua relevância e reputação digital</div>
+    </div>
+    <div class="service-card fade-in stagger-2">
+      <div class="service-icon">⭐</div>
+      <div class="service-name">Gestão de Reputação</div>
+      <div class="service-desc">Monitoramento, resposta a avaliações e estratégia de imagem online da sua marca</div>
+    </div>
+    <div class="service-card fade-in stagger-3">
+      <div class="service-icon">📊</div>
+      <div class="service-name">Diagnóstico de Comunicação</div>
+      <div class="service-desc">Análise completa da sua presença digital com recomendações estratégicas personalizadas</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO -->
+<section class="diagnostic" id="diagnostic">
+  <div style="position:relative;z-index:1">
+    <div class="section-tag" style="justify-content:center">Avalie sua Comunicação</div>
+    <h2>Sua comunicação está preparada para atrair pacientes com <em style="color:var(--teal)">confiança</em>?</h2>
+    <p>Responda a uma avaliação rápida e receba uma análise inicial sobre a presença digital da sua clínica ou consultório — sem compromisso.</p>
+    
+    <div class="diagnostic-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nome completo</label>
+          <input type="text" placeholder="Dr. João Silva">
+        </div>
+        <div class="form-group">
+          <label>WhatsApp</label>
+          <input type="tel" placeholder="(51) 99999-9999">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Especialidade / Segmento</label>
+          <select>
+            <option value="">Selecione...</option>
+            <option>Médico especialista</option>
+            <option>Clínica médica</option>
+            <option>Hospital</option>
+            <option>Odontologia</option>
+            <option>Fisioterapia</option>
+            <option>Estética / Dermatologia</option>
+            <option>Laboratório</option>
+            <option>Healthtech</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Cidade / Estado</label>
+          <input type="text" placeholder="Porto Alegre, RS">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group form-full">
+          <label>Como está sua presença digital hoje?</label>
+          <select>
+            <option value="">Selecione...</option>
+            <option>Não tenho presença digital</option>
+            <option>Tenho perfis, mas sem estratégia</option>
+            <option>Tenho agência, mas não estou satisfeito</option>
+            <option>Quero evoluir minha presença atual</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:8px" onclick="submitForm()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        Avaliar minha comunicação
+      </button>
+      <p style="font-size:0.72rem;color:rgba(255,255,255,0.3);text-align:center;margin-top:14px">Retorno em até 24h. Sem spam, sem compromisso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTES -->
+<section class="clients-section" id="clients-section">
+  <div class="clients-header">
+    <div>
+      <div class="section-tag">Clientes</div>
+      <h2>Quem <em>confia</em> na Health Agency</h2>
+    </div>
+    <a href="#diagnostic" class="btn-primary">Ser próximo cliente</a>
+  </div>
+  
+  <div class="logos-strip">
+    <div class="logos-track">
+      <div class="logo-item">CLÍNICA A</div>
+      <div class="logo-item">DR. SILVA</div>
+      <div class="logo-item">SAÚDE +</div>
+      <div class="logo-item">ODONTO PRO</div>
+      <div class="logo-item">GRUPO MED</div>
+      <div class="logo-item">FISIO CORP</div>
+      <div class="logo-item">DERM LAB</div>
+      <div class="logo-item">HEALTH CO</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="logo-item">CLÍNICA A</div>
+      <div class="logo-item">DR. SILVA</div>
+      <div class="logo-item">SAÚDE +</div>
+      <div class="logo-item">ODONTO PRO</div>
+      <div class="logo-item">GRUPO MED</div>
+      <div class="logo-item">FISIO CORP</div>
+      <div class="logo-item">DERM LAB</div>
+      <div class="logo-item">HEALTH CO</div>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card fade-in">
+      <div class="project-thumb">
+        <div class="project-thumb-bg" style="background: linear-gradient(135deg, #0a2540, #1a4a6b)"></div>
+        <div class="project-thumb-label">Social Media + Tráfego</div>
+      </div>
+      <div class="project-body">
+        <div class="project-spec">Cardiologia · Porto Alegre</div>
+        <div class="project-title">Dr. Roberto M. — Cardiologista</div>
+        <div class="project-result">Crescimento de presença digital com conteúdo educativo e estratégia de autoridade no Instagram e LinkedIn</div>
+      </div>
+    </div>
+    <div class="project-card fade-in stagger-1">
+      <div class="project-thumb">
+        <div class="project-thumb-bg" style="background: linear-gradient(135deg, #1a4a6b, #0d9fbb)"></div>
+        <div class="project-thumb-label">Branding + Site</div>
+      </div>
+      <div class="project-body">
+        <div class="project-spec">Clínica Multidisciplinar · Balneário Camboriú</div>
+        <div class="project-title">Clínica Integra Saúde</div>
+        <div class="project-result">Redesign completo de identidade visual, novo site e estruturação de presença digital multicanal</div>
+      </div>
+    </div>
+    <div class="project-card fade-in stagger-2">
+      <div class="project-thumb">
+        <div class="project-thumb-bg" style="background: linear-gradient(135deg, #0d9fbb, #0a2540)"></div>
+        <div class="project-thumb-label">SEO + Conteúdo</div>
+      </div>
+      <div class="project-body">
+        <div class="project-spec">Odontologia · Itajaí</div>
+        <div class="project-title">Sorriso Studio Dental</div>
+        <div class="project-result">Estratégia de conteúdo e SEO local que posicionou a clínica nas primeiras posições do Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="plans" id="plans">
+  <div class="section-tag">Planos</div>
+  <h2>Escolha o plano ideal para <em>o seu momento</em></h2>
+  <p class="section-lead">Soluções flexíveis para cada fase da sua jornada digital na saúde. Todos os planos seguem as normativas dos conselhos profissionais.</p>
+  
+  <div class="plans-grid">
+    <div class="plan-card fade-in">
+      <div class="plan-name">Plano 01</div>
+      <div class="plan-title">Presença Médica</div>
+      <div class="plan-desc">Ideal para profissionais que estão iniciando sua presença digital ou precisam estruturar o básico com qualidade.</div>
+      <ul class="plan-features">
+        <li class="plan-feature">Gestão de Instagram (12 posts/mês)</li>
+        <li class="plan-feature">Bio e perfil otimizados</li>
+        <li class="plan-feature">Identidade visual para redes</li>
+        <li class="plan-feature">Relatório mensal simplificado</li>
+        <li class="plan-feature">Suporte via WhatsApp</li>
+      </ul>
+      <a href="https://wa.me/5551999999999" class="btn-plan btn-plan-outline" target="_blank">Solicitar proposta</a>
+    </div>
+    <div class="plan-card featured fade-in stagger-1">
+      <div class="plan-badge">Mais popular</div>
+      <div class="plan-name">Plano 02</div>
+      <div class="plan-title">Autoridade Médica</div>
+      <div class="plan-desc">Para quem busca construir posicionamento sólido, atrair pacientes qualificados e fortalecer a reputação digital.</div>
+      <ul class="plan-features">
+        <li class="plan-feature">Social media completo (Insta + LinkedIn)</li>
+        <li class="plan-feature">Tráfego pago (Google + Meta)</li>
+        <li class="plan-feature">Conteúdo para autoridade</li>
+        <li class="plan-feature">Gestão de avaliações (Google Meu Negócio)</li>
+        <li class="plan-feature">Site médico profissional</li>
+        <li class="plan-feature">Relatório estratégico mensal</li>
+        <li class="plan-feature">Reunião mensal com estrategista</li>
+      </ul>
+      <a href="https://wa.me/5551999999999" class="btn-plan btn-plan-solid" target="_blank">Solicitar proposta</a>
+    </div>
+    <div class="plan-card fade-in stagger-2">
+      <div class="plan-name">Plano 03</div>
+      <div class="plan-title">Growth Health</div>
+      <div class="plan-desc">Para clínicas, grupos médicos e healthtechs com ambição de crescimento acelerado e presença digital premium.</div>
+      <ul class="plan-features">
+        <li class="plan-feature">Estratégia 360° personalizada</li>
+        <li class="plan-feature">Time dedicado (Estrategista + Designer + Redator)</li>
+        <li class="plan-feature">Branding e rebranding completo</li>
+        <li class="plan-feature">SEO avançado + conteúdo editorial</li>
+        <li class="plan-feature">Tráfego pago gerenciado</li>
+        <li class="plan-feature">Gestão de reputação multicanal</li>
+        <li class="plan-feature">Diagnóstico e inteligência de mercado</li>
+      </ul>
+      <a href="https://wa.me/5551999999999" class="btn-plan btn-plan-outline" target="_blank">Solicitar proposta</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div style="position:relative;z-index:1">
+    <div class="section-tag" style="justify-content:center">Próximo passo</div>
+    <h2>Vamos transformar sua comunicação em uma <em style="color:var(--teal)">ferramenta de crescimento</em>?</h2>
+    <p>A Health Agency está pronta para analisar sua situação atual e apresentar um plano estratégico personalizado para a sua realidade.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/5551999999999" class="btn-primary" target="_blank" style="font-size:1rem;padding:16px 36px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chamar no WhatsApp
+      </a>
+      <a href="#diagnostic" class="btn-ghost" style="font-size:1rem;padding:15px 36px">Fazer diagnóstico gratuito</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Health Agency</div>
+      <p class="footer-tagline">Marketing médico especializado para profissionais e instituições de saúde que querem crescer com autoridade, ética e estratégia.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#about">Quem Somos</a></li>
+        <li><a href="#clients-types">Atendimento</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#clients-section">Clientes</a></li>
+        <li><a href="#plans">Planos</a></li>
+        <li><a href="#diagnostic">Avalie sua Comunicação</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="#">Social Media Médico</a></li>
+        <li><a href="#">Tráfego Pago</a></li>
+        <li><a href="#">Sites Médicos</a></li>
+        <li><a href="#">SEO para Saúde</a></li>
+        <li><a href="#">Branding Médico</a></li>
+        <li><a href="#">Gestão de Reputação</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Contato</h4>
+      <p>
+        <strong>Porto Alegre / RS</strong><br>
+        Atendimento presencial<br><br>
+        <strong>Itajaí e Balneário Camboriú / SC</strong><br>
+        Atendimento presencial<br><br>
+        <strong>Todo o Brasil</strong><br>
+        Atendimento remoto nacional<br><br>
+        <strong>E-mail</strong><br>
+        <a href="mailto:contato@healthagency.com.br" style="color:rgba(255,255,255,0.4);text-decoration:none">contato@healthagency.com.br</a><br><br>
+        <strong>Instagram</strong><br>
+        <a href="https://instagram.com/healthagency" target="_blank" style="color:rgba(255,255,255,0.4);text-decoration:none">@healthagency</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Health Agency — Health Marketing Group. Todos os direitos reservados.</span>
+    <span>Porto Alegre · Itajaí · Balneário Camboriú · Atendimento nacional</span>
+  </div>
+</footer>
+
+<script>
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileNav').classList.remove('open');
+}
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  if (window.scrollY > 60) {
+    header.style.height = '60px';
+  } else {
+    header.style.height = '72px';
+  }
+});
+
+// Form submit
+function submitForm() {
+  const btn = event.target;
+  btn.innerHTML = '✓ Enviado! Retornaremos em até 24h.';
+  btn.style.background = '#1ebe5a';
+  setTimeout(() => {
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg> Avaliar minha comunicação';
+    btn.style.background = '';
+  }, 4000);
+}
+</script>
+
+</body>
+</html>
