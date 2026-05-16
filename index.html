@@ -1354,21 +1354,40 @@ footer {
     <h2>Sua comunicação está preparada para atrair pacientes com <em style="color:var(--teal)">confiança</em>?</h2>
     <p>Responda a uma avaliação rápida e receba uma análise inicial sobre a presença digital da sua clínica ou consultório — sem compromisso.</p>
     
-    <div class="diagnostic-form">
+    <div data-fs-success style="display:none;background:rgba(13,159,187,0.15);border:1px solid rgba(13,159,187,0.4);border-radius:12px;padding:32px;text-align:center;max-width:600px;margin:0 auto">
+      <div style="font-size:2rem;margin-bottom:12px">✅</div>
+      <div style="font-size:1.1rem;font-weight:600;color:white;margin-bottom:8px">Diagnóstico enviado com sucesso!</div>
+      <div style="font-size:0.88rem;color:rgba(255,255,255,0.6);line-height:1.6">Recebemos suas informações e entraremos em contato em até 24h pelo e-mail ou WhatsApp informado.</div>
+    </div>
+    <div data-fs-error style="display:none;background:rgba(220,50,50,0.15);border:1px solid rgba(220,50,50,0.3);border-radius:8px;padding:14px 18px;text-align:center;max-width:600px;margin:0 auto 16px;font-size:0.85rem;color:#ff8a8a"></div>
+
+    <form class="diagnostic-form" id="diagnostic-form" data-fs-field>
       <div class="form-row">
         <div class="form-group">
           <label>Nome completo</label>
-          <input type="text" placeholder="Dr. João Silva">
+          <input type="text" name="nome" placeholder="Dr. João Silva" required data-fs-field>
+          <span data-fs-error="nome" style="font-size:0.72rem;color:#ff8a8a;margin-top:4px"></span>
         </div>
         <div class="form-group">
-          <label>WhatsApp</label>
-          <input type="tel" placeholder="(51) 99999-9999">
+          <label>E-mail</label>
+          <input type="email" name="email" placeholder="seu@email.com.br" required data-fs-field>
+          <span data-fs-error="email" style="font-size:0.72rem;color:#ff8a8a;margin-top:4px"></span>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
+          <label>WhatsApp</label>
+          <input type="tel" name="whatsapp" placeholder="(51) 99999-9999" data-fs-field>
+        </div>
+        <div class="form-group">
+          <label>Cidade / Estado</label>
+          <input type="text" name="cidade" placeholder="Porto Alegre, RS" data-fs-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group form-full">
           <label>Especialidade / Segmento</label>
-          <select>
+          <select name="segmento" data-fs-field>
             <option value="">Selecione...</option>
             <option>Médico especialista</option>
             <option>Clínica médica</option>
@@ -1381,15 +1400,11 @@ footer {
             <option>Outro</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Cidade / Estado</label>
-          <input type="text" placeholder="Porto Alegre, RS">
-        </div>
       </div>
       <div class="form-row">
         <div class="form-group form-full">
           <label>Como está sua presença digital hoje?</label>
-          <select>
+          <select name="presenca_digital" data-fs-field>
             <option value="">Selecione...</option>
             <option>Não tenho presença digital</option>
             <option>Tenho perfis, mas sem estratégia</option>
@@ -1398,12 +1413,24 @@ footer {
           </select>
         </div>
       </div>
-      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:8px" onclick="submitDiagnostic()">
+      <div class="form-row">
+        <div class="form-group form-full">
+          <label>Mensagem (opcional)</label>
+          <textarea name="mensagem" placeholder="Conte um pouco mais sobre sua situação atual ou o que está buscando..." data-fs-field style="padding:12px 16px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:white;font-size:0.88rem;font-family:'DM Sans',sans-serif;outline:none;resize:vertical;min-height:90px;width:100%;transition:border-color 0.2s" onfocus="this.style.borderColor='#0d9fbb'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary" data-fs-submit-btn style="width:100%;justify-content:center;margin-top:8px">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
         Avaliar minha comunicação
       </button>
       <p style="font-size:0.72rem;color:rgba(255,255,255,0.3);text-align:center;margin-top:14px">Retorno em até 24h. Sem spam, sem compromisso.</p>
-    </div>
+    </form>
+
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#diagnostic-form', formId: 'xaqvrgpo' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   </div>
 </section>
 
@@ -1639,35 +1666,12 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Form submit — abre email com os dados do lead
-function submitDiagnostic() {
-  const form = document.querySelector('.diagnostic-form');
-  const inputs = form.querySelectorAll('input, select');
-  const nome = inputs[0].value || '(não informado)';
-  const wpp  = inputs[1].value || '(não informado)';
-  const seg  = inputs[2].value || '(não informado)';
-  const cidade = inputs[3].value || '(não informado)';
-  const presenca = inputs[4].value || '(não informado)';
-
-  const subject = encodeURIComponent('Diagnóstico de Comunicação — ' + nome);
-  const body = encodeURIComponent(
-    'Novo lead via formulário de diagnóstico do site:\n\n' +
-    'Nome: ' + nome + '\n' +
-    'WhatsApp: ' + wpp + '\n' +
-    'Segmento: ' + seg + '\n' +
-    'Cidade: ' + cidade + '\n' +
-    'Presença digital atual: ' + presenca
-  );
-
-  window.location.href = 'mailto:healthmktgroup@gmail.com?subject=' + subject + '&body=' + body;
-
-  const btn = document.querySelector('.diagnostic-form .btn-primary');
-  btn.innerHTML = '✓ Abrindo seu e-mail... Retornaremos em até 24h.';
-  btn.style.background = '#1ebe5a';
-  setTimeout(() => {
-    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg> Avaliar minha comunicação';
-    btn.style.background = '';
-  }, 5000);
+// Feedback visual ao enviar formulário via Formspree
+function formSending(form) {
+  const btn = document.getElementById('btn-diagnostico');
+  btn.innerHTML = '⏳ Enviando...';
+  btn.style.background = 'var(--petrol)';
+  btn.disabled = true;
 }
 </script>
 
